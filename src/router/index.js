@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Skull from '../components/Skull.vue'
 import AppAccounts from '../components/AppAccounts.vue'
+import welcome from '../components/welcome.vue'
 
 Vue.use(VueRouter)
 
