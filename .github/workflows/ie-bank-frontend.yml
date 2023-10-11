@@ -11,6 +11,8 @@ on:
 
 env:
   FRONTEND_WEBAPP_DEV: maudhelen-fe-dev
+  FRONTEND_WEBAPP_PROD: maudhelen-fe-prod
+  FRONTEND_WEBAPP_UAT: maudhelen-fe-uat
 
 jobs:
   build:
