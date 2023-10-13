@@ -26,6 +26,7 @@
                 <th scope="col">Account Name</th>
                 <th scope="col">Account Number</th>
                 <th scope="col">Account Balance</th>
+                <th scope="col">Account Country</th>
                 <th scope="col">Account Currency</th>
                 <th scope="col">Account Status</th>
                 <th scope="col">Actions</th>
@@ -36,6 +37,7 @@
                 <td>{{ account.name }}</td>
                 <td>{{ account.account_number }}</td>
                 <td>{{ account.balance }}</td>
+                <td>{{ account.country }}</td>
                 <td>{{ account.currency }}</td>
                 <td>
                   <span
@@ -74,46 +76,61 @@
           </footer>
         </div>
       </div>
-      <b-modal
-        ref="addAccountModal"
-        id="account-modal"
-        title="Create a new account"
-        hide-backdrop
-        hide-footer
+<b-modal
+  ref="addAccountModal"
+  id="account-modal"
+  title="Create a new account"
+  hide-backdrop
+  hide-footer
+>
+  <b-form @submit="onSubmit" class="w-100">
+    <b-form-group
+      id="form-name-group"
+      label="Account Name:"
+      label-for="form-name-input"
+    >
+      <b-form-input
+        id="form-name-input"
+        type="text"
+        v-model="createAccountForm.name"
+        placeholder="Account Name"
+        required
       >
-        <b-form @submit="onSubmit" class="w-100">
-          <b-form-group
-            id="form-name-group"
-            label="Account Name:"
-            label-for="form-name-input"
-          >
-            <b-form-input
-              id="form-name-input"
-              type="text"
-              v-model="createAccountForm.name"
-              placeholder="Account Name"
-              required
-            >
-            </b-form-input>
-          </b-form-group>
-          <b-form-group
-            id="form-currency-group"
-            label="Currency:"
-            label-for="form-currency-input"
-          >
-            <b-form-input
-              id="form-currency-input"
-              type="text"
-              v-model="createAccountForm.currency"
-              placeholder="$ or €"
-              required
-            >
-            </b-form-input>
-          </b-form-group>
+      </b-form-input>
+    </b-form-group>
+    <b-form-group
+      id="form-currency-group"
+      label="Currency:"
+      label-for="form-currency-input"
+    >
+      <b-form-input
+        id="form-currency-input"
+        type="text"
+        v-model="createAccountForm.currency"
+        placeholder="$ or €"
+        required
+      >
+      </b-form-input>
+    </b-form-group>
+    <b-form-group
+      id="form-country-group"
+      label="Country:"
+      label-for="form-country-input"
+    >
+      <b-form-input
+        id="form-country-input"
+        type="text"
+        v-model="createAccountForm.country"
+        placeholder="Country"
+        required
+      >
+      </b-form-input>
+    </b-form-group>
 
-          <b-button type="submit" variant="outline-info">Submit</b-button>
-        </b-form>
-      </b-modal>
+    <b-button type="submit" variant="outline-info">Submit</b-button>
+  </b-form>
+</b-modal>
+
       <!-- End of Modal for Create Account-->
       <!-- Start of Modal for Edit Account-->
       <b-modal
@@ -156,6 +173,7 @@ export default {
       createAccountForm: {
         name: "",
         currency: "",
+        country: "",
       },
       editAccountForm: {
         id: "",
