@@ -4,7 +4,6 @@ name: ie-bank-frontend
 on:
   push:
     branches:
-      - uat
       - main
   workflow_dispatch:
 
