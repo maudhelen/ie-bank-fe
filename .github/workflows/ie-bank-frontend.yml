@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
 
 env:
-  FRONTEND_WEBAPP_DEV: maudhelen2-fe-dev
-  FRONTEND_WEBAPP_PROD: maudhelen2-fe-prod
-  FRONTEND_WEBAPP_UAT: maudhelen2-fe-uat
+  FRONTEND_WEBAPP_DEV: maudhelen22-fe-dev
+  FRONTEND_WEBAPP_PROD: maudhelen22-fe-prod
+  FRONTEND_WEBAPP_UAT: maudhelen22-fe-uat
 
 jobs:
   build:
